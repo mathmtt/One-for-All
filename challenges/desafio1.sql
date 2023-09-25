@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 CREATE TABLE SpotifyClone.subscription_plans (
   plan_id INT PRIMARY KEY,
-  plan_title VARCHAR(255) NOT NULL,
+  plan_title VARCHAR(100) NOT NULL,
   cost DECIMAL(10, 2)
 );
 
@@ -16,7 +16,7 @@ VALUES
 
 CREATE TABLE SpotifyClone.members (
   member_id INT PRIMARY KEY,
-  member_name VARCHAR(255) NOT NULL,
+  member_name VARCHAR(100) NOT NULL,
   age INT,
   plan_id INT NOT NULL,
   FOREIGN KEY (plan_id) REFERENCES subscription_plans(plan_id)
@@ -37,7 +37,7 @@ VALUES
 
 CREATE TABLE SpotifyClone.performers(
   performer_id INT PRIMARY KEY,
-  performer_name VARCHAR(255)
+  performer_name VARCHAR(100)
 );
 
 INSERT INTO SpotifyClone.performers (performer_id, performer_name)
@@ -51,7 +51,7 @@ VALUES
 
 CREATE TABLE SpotifyClone.recordings(
   recording_id INT PRIMARY KEY,
-  recording_title VARCHAR(255),
+  recording_title VARCHAR(100),
   performer_id INT,
   year_released INT,
   FOREIGN KEY (performer_id) REFERENCES performers(performer_id)
@@ -70,7 +70,7 @@ VALUES
 
 CREATE TABLE SpotifyClone.tracks(
   track_id INT PRIMARY KEY,
-  track_title VARCHAR(255) NOT NULL,
+  track_title VARCHAR(100) NOT NULL,
   recording_id INT,
   duration_in_seconds INT,
   FOREIGN KEY (recording_id) REFERENCES recordings(recording_id)
