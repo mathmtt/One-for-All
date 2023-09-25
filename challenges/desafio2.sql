@@ -1,4 +1,4 @@
 SELECT 
-    (SELECT COUNT(*) FROM MusicApp.tracks) AS cancoes,
-    (SELECT COUNT(*) FROM MusicApp.performers) AS artistas,
-    (SELECT COUNT(*) FROM MusicApp.recordings) AS albuns;
+    (SELECT COUNT(*) FROM SpotifyClone.tracks) AS cancoes,
+    (SELECT COUNT(*) FROM SpotifyClone.performers) AS artistas,
+    (SELECT COUNT(*) FROM SpotifyClone.recordings) AS albuns;
